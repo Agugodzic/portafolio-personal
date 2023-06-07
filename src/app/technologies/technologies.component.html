@@ -1,0 +1,24 @@
+<div id="tecnologias">
+  <app-particles></app-particles>
+  <div #techContainer id="technologies-container">
+    <div id="technologies-contents">
+      <div id="technologies-text-container">
+      <div id="technologies-title" class="glitch" data-text="Te">Tecnologias</div>
+        <div id="technologies-text">Como programador autodidacta, me veo en constante proceso de busqueda y aprendizaje de nuevas herramientas. He implementado diversas tecnologias y lenguajes en mis proyectos de acuerdo a las necesidades de los mismos.
+        </div>
+      </div>
+      <div id="technologies-items-container">
+        <div class="item"*ngFor="let item of technologiesInView">
+          <img class="item-logo" [src]="item.logo">
+          <div class="item-description">{{item.description}}</div>
+        </div>
+        <div id="page-selector">
+          <div *ngFor="let button of pageButtons">
+            <button *ngIf="!button.selected" (click)="changePage(button.number)"></button>
+            <button *ngIf="button.selected" class="selected" (click)="changePage(button.number)"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

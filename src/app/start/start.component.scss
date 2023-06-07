@@ -1,0 +1,133 @@
+@import 'src/theme.scss';
+
+#start-container{
+  animation-name:appear;
+  animation-duration: 0.7s;
+  overflow: hidden;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+#start-content{
+  display: flex;
+  flex-direction: column;
+  margin:auto 0;
+  min-height: fit-content;
+}
+
+#title-container{
+  margin: 0 auto 100px auto;
+  max-width: 500px;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: left;
+}
+
+#start-text-container{
+  //background-color: rgba(104, 106, 194, 0.123);
+  width:90vw;
+  border-radius: 2px;
+  margin:0 auto;
+  text-align: center;
+  animation-name:appear;
+  animation-duration: 0.8s;
+}
+
+.start-text{
+  max-width:18vw;
+  border-radius: 2px;
+  margin:0 20px;
+  display: inline-block;
+  font-size: 12px;
+  font-family: $robotoFont;
+    .text-logo{
+      display:none;
+    }
+    p{
+      text-align: left;
+      margin:5px;
+      display:inline;
+      line-height:17px;
+      font-weight: 100;
+
+    }
+}
+
+#button-container{
+  margin: 90px auto;
+  text-align: center;
+  animation-name:appear;
+  animation-duration: 1.1s;
+}
+
+@media screen and (max-width:600px){
+  #start-container{
+    max-width: 100vw !important;
+  }
+  #start-container{
+    padding-top: 40px;
+  }
+
+
+  #title-container{
+    margin-top: 130px;
+    margin-bottom: 60px;
+    max-width: 87vw;
+    font-size: 37px;
+  }
+
+  #start-text-container{
+    //background-color: rgba(104, 106, 194, 0.123);
+    width:90vw;
+    margin:0 auto;
+  }
+
+  .start-text{
+    border-radius: 6px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.116);
+    display: block;
+    max-width:90vw;
+    margin:30px auto;
+    font-size: 14px;
+    font-family: $robotoFont;
+    text-align: left;
+    .text-logo{
+      display:inline-block;
+      height: 17px;
+      animation-name:logo-animation;
+      animation-duration: 2.5s;
+      margin-right:4px;
+    }
+      p{
+        display:inline;
+        margin:5px;
+        line-height:17px;
+        font-weight: 200;
+
+      }
+  }
+
+  #button-container{
+    margin: 0 auto;
+    margin-top: 60px;
+    animation-name:appear;
+    animation-duration: 1.1s;
+  }
+
+}
+
+
+@keyframes logo-animation{
+  0%{
+    transform: rotate(0);
+    opacity:0;
+  }
+  100%{
+    transform: rotate(1440deg);
+    opacity:initial;
+  }
+}

@@ -1,0 +1,52 @@
+#logo-container{
+  position:static;
+
+}
+#logo{
+  height: 35px;
+  opacity:80%;
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index: 2000;
+  filter:grayscale(3%);
+  transition:1s;
+  animation-name:logo-animation;
+  animation-duration: 2.5s;
+  &:hover{
+    filter:grayscale(0%);
+    opacity:100%;
+    transform: rotate(750deg);
+    transition:1s;
+  }
+}
+
+#logo-text{
+  height: 60px;
+  top: 9px;
+  position:absolute;
+  top:px;
+  left:55px;
+  z-index: 2000;
+  transition:1s;
+}
+
+@keyframes logo-animation{
+  0%{
+    filter:grayscale(100%);
+    transform: rotate(0);
+    opacity:0;
+  }
+  100%{
+    filter:grayscale(3%);
+    transform: rotate(1440deg);
+    opacity:initial;
+  }
+}
+
+@media screen and (max-width:600px){
+  #logo-container{
+    display: none;
+
+  }
+}

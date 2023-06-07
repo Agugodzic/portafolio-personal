@@ -1,0 +1,58 @@
+<app-previews (closeEvent)="closePreviews($event)" [previews]="selectedPreviews" *ngIf="showPreviews"></app-previews>
+<app-particles id="proyectos"></app-particles>
+<div id="proyects">
+  <div id="proyects-content">
+    <div id="proyects-items-container">
+
+      <div *ngFor="let proyect of proyectsInView" class="item">
+        <div class="item-image-container">
+          <div class="item-info">
+            <img *ngIf="proyect.repository.length > 0" class="item-info-icon" src="assets/github-white.png" (click)="openUrl(proyect.repository)">
+            <img *ngIf="proyect.previews.length > 0" class="item-info-icon" (click)="switchPreviews(proyect.previews)" src="assets/icons/images-preview.png">
+            <img *ngIf="proyect.url.length > 1" class="item-info-icon" (click)="openUrl(proyect.url)" src="assets/icons/link.png">
+          </div>
+          <img class="item-image" [src]="proyect.image" class="item-image">
+        </div>
+        <p class="item-text"><span class="item-title">{{proyect.title}} </span>{{proyect.text}}</p>
+        <p class="item-tech-list">
+          <span *ngFor="let item of proyect.technologies" class="item-tech">{{item}}</span>
+        </p>
+      </div>
+
+      <div id="page-selector">
+        <div *ngFor="let button of pageButtons">
+          <button *ngIf="!button.selected" (click)="changePage(button.number)"></button>
+          <button *ngIf="button.selected" class="selected" (click)="changePage(button.number)"></button>
+        </div>
+      </div>
+
+    </div>
+    <div id="proyects-items-container-mobile">
+
+      <div *ngFor="let proyect of proyectList" class="item">
+        <div class="item-image-container">
+          <img class="item-image" [src]="proyect.image" class="item-image">
+        </div>
+
+        <p class="item-text"><span class="item-title">{{proyect.title}} </span>{{proyect.text}}</p>
+        <p class="item-tech-list">
+          <span *ngFor="let item of proyect.technologies" class="item-tech">{{item}}</span>
+        </p>
+        <div class="item-mobile-buttons">
+          <img *ngIf="proyect.repository.length > 0" class="item-info-icon" src="assets/github-white.png" (click)="openUrl(proyect.repository)">
+          <img *ngIf="proyect.previews.length > 0" class="item-info-icon" (click)="switchPreviews(proyect.previews)" src="assets/icons/images-preview.png">
+          <img *ngIf="proyect.url.length > 1" class="item-info-icon" (click)="openUrl(proyect.url)" src="assets/icons/link.png">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="proyects-text-container">
+      <div id="proyects-title" class="glitch" data-text="Pr" >Proyectos</div>
+        <p id="proyects-text">
+          Realizo proyectos regularmente para obtener experiencia en distintos lenguajes y tecnologías. Estos me permiten aprender y superarme constantemente al enfrentarme a los diversos desafíos que surgen de su implementación.
+        </p>
+      </div>
+  </div>
+</div>

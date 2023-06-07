@@ -1,0 +1,12 @@
+<div id="previews-container">
+  <div id="preview">
+    <img id="preview-image" [src]="previewSelected">
+  </div>
+  <div id="preview-selectors-container">
+    <div *ngFor="let preview of previews" id="preview-selector">
+      <img [ngStyle]="borderStyle(preview)" id="preview-selector-image" (click)="changePreview(preview)" [src]="preview">
+    </div>
+  </div>
+  <button class="yellow-button" (click)="close()">cerrar</button>
+</div>
++

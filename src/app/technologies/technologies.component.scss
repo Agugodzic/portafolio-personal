@@ -1,0 +1,241 @@
+@import 'src/theme.scss';
+
+#tecnologias{
+  min-height: 100vh;
+  max-width: 100vw;
+  height: fit-content;
+}
+
+#technologies-container{
+  //background-color: rgba(0, 0, 0, 0.226);
+  min-width: 100%;
+  min-height: 600px;
+  max-width: 700px;
+  height: 100vh;
+  text-align: left;
+  padding-top:1px;
+  display:none;
+  align-items: center;
+}
+
+#technologies-contents{
+margin: 0 auto;
+width: fit-content;
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+animation-name: text-appear;
+animation-duration: 1.5s;
+}
+
+
+#technologies-text-container{
+text-align: left;
+margin: 50px;
+
+  #technologies-title{
+    color:$yellow;
+    font-size:35px;
+    font-weight: 600;
+    position:relative;
+    margin: 20px 0;
+    animation-name: text-appair;
+    animation-duration: 0.9s;
+  }
+
+  #technologies-text{
+    color:rgb(255, 255, 255);
+    width: 300px;
+    font-size: 15px;
+    font-weight: 200;
+    font-family: $robotoFont;
+    position:relative;
+    animation-name: text-appear;
+    animation-duration: 1s;
+  }
+
+}
+
+#technologies-items-container{
+  //background-color: rgba(0, 0, 0, 0.199);
+  max-width: 800px;
+  min-height: 200px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .item{
+    height:fit-content;
+    width:fit-content;
+    vertical-align: middle;
+    align-content: center;
+    align-items: center;
+    margin-left:27px;
+    margin-bottom: 50px;
+    animation-name: items-appear;
+    animation-duration: 1.2s;
+
+     &:hover{
+      .item-description{
+        opacity:100%;
+      }
+    }
+  }
+
+  .item-logo{
+    height: 40px;
+    margin:30px auto;
+    align-items: center;
+    display:block;
+
+  }
+  .item-description{
+    text-align: left;
+    width:230px;
+    font-size: 11px;
+    font-weight: 200;
+    //font-weight: 600;
+    font-family: $robotoFont;
+     //color:$backgroundColor;
+  }
+}
+
+#page-selector{
+  margin: 0 auto;
+  display:flex;
+  align-items: center;
+  padding: 0 auto;
+  max-width: 99vw;
+  width:800px;
+  justify-content: center;
+    button{
+      border:none;
+      background-color: white;
+      border-radius: 10px;
+      height: 6px;
+      width: 6px;
+      padding:0;
+      margin-right: 12px;
+      cursor:pointer;
+    }
+    .selected{
+      height: 8px;
+      width: 8px;
+      transform:translateY(0.5px);
+    }
+}
+
+@keyframes items-appear{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+
+@keyframes text-appear{
+  0%{
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  10%{
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100%{
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width:1200px){
+
+  #tecnologias{
+    min-width: 80vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    height: auto;
+  }
+
+  #technologies-container{
+    //background-color: rgba(0, 0, 0, 0.226);
+    min-width: auto;
+    text-align: left;
+    padding-top:50px;
+    justify-content: center;
+    max-width: 100vw;
+    height: auto;
+  }
+
+  #technologies-contents{
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  #technologies-text-container{
+    text-align: left;
+    margin: 50px auto;
+
+    #technologies-text{
+      min-width: 80vw;
+    }
+
+    #technologies-title{
+      text-align: center;
+      font-size:34px;
+      margin: 20px auto;
+      width: fit-content;
+    }
+
+
+  }
+
+  #technologies-items-container{
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+
+  #page-selector{
+      button{
+        margin-right: 20px;
+      }
+  }
+}
+
+@media screen and (max-width:600px){
+  #technologies-items-container{
+    //background-color: rgba(0, 0, 0, 0.199);
+    max-width: 100vw;
+
+    .item{
+      margin-left:27px;
+      margin-bottom: 35px;
+
+       &:hover{
+        .item-description{
+          opacity:100%;
+        }
+      }
+    }
+
+    .item-logo{
+      height: 40px;
+      margin:30px auto;
+      align-items: center;
+      display:block;
+
+    }
+
+    .item-description{
+      text-align: left;
+      width:40vw;
+      font-size: 11px;
+      font-weight: 200;
+      //font-weight: 600;
+      font-family: $robotoFont;
+       //color:$backgroundColor;
+    }
+  }
+}
